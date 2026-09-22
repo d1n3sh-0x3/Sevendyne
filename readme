@@ -45,6 +45,7 @@ Cookie: sessionid=<attacker session>
 
 <!-- 📷 Screenshot 1: request/response above showing the successful cross-tenant delete
      ![Cross-tenant delete request and 200 response](images/finding-delete-request.png) -->
+<img width="955" height="480" alt="1" src="https://github.com/user-attachments/assets/5a980516-a048-4207-9c70-5cdc527efb40" />
 <img width="952" height="476" alt="3" src="https://github.com/user-attachments/assets/1f1da701-a8c3-4468-9771-3a2f2585b4f2" />
 <img width="937" height="422" alt="2" src="https://github.com/user-attachments/assets/b8428c98-c96d-425f-a4b5-e58d5ce5e80c" />
 
@@ -77,8 +78,6 @@ The endpoint fetches the object by primary key alone. The authorization layer ve
    ```python
    employee = get_object_or_404(Employee, pk=pk, company=current_company, is_deleted=False)
    ```
-   <img width="955" height="480" alt="1" src="https://github.com/user-attachments/assets/5a980516-a048-4207-9c70-5cdc527efb40" />
-
 2. Never reassign an object's tenant/company as a side effect of delete.
 
 3. Require `POST` for this and every other state-changing endpoint (`@require_POST`) and enforce CSRF protection.
